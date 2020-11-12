@@ -55,7 +55,7 @@ HOST_AR  := ar
 
 # Handle Windows and *nix differences.
 ifeq "$(OS)" "Windows_NT"
-    MAKEDIR = mkdir $(subst /,\,$(dir $@))
+    MAKEDIR = mkdir -p $(subst /,\\,$(dir $@))
     REMOVE := del /q
     REMOVE_DIR := rd /s /q
     QUIET := >nul 2>nul & exit 0
